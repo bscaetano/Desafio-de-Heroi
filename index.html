@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nível de Herói</title>
+</head>
+<body>
+
+<h1> Desafio de Herói </h1>
+<h3 id="nome"></h3>
+
+<p id="xp"> Seu nível de XP é 0 </p>
+<p id="medalha"> Sua medalha é Ramelão </p>
+
+<button type="button" id="treinar" onclick="treinar()"> Treinar </button>
+
+</body>
+
+<script type="text/javascript">
+	
+	var heroi;
+	var xp = 0;
+	var medalha;
+	function nivelHeroi(){
+		heroi = prompt(" Qual é o nome do seu herói ");
+		if(heroi != null){
+			window.alert(
+				" Olá "+heroi+", seja bem vindo ao Desafio de Herói :} "
+			);
+		}else{
+			window.alert(
+				" Não é possível começar o jogo sem o nome de seu herói :{ "
+			);
+		}
+		window.alert(
+			heroi+", seu XP é "+xp+", você deve treinar mais ;} "
+		);
+		document.getElementById("nome").innerHTML = " Herói "+heroi;
+    }
+    nivelHeroi();
+
+	function treinar(){
+		if(xp != 10001){
+			if(xp == 10000){
+				xp += 1;
+			}else{
+				xp += 1000;
+			}
+			if(xp == 10001){
+				var desligaBotao = document.getElementById("treinar");
+				desligaBotao.disabled = true;
+				window.alert(" O Herói de nome "+heroi+" está no nível de "+xp);
+			}
+		}
+		switch (xp) {
+		  case 0:
+		  	medalha = "Ramelão";
+		  	break;
+		  case 1000:
+		    medalha = "Tome Ferro";
+		    break;
+		  case 2000:
+		    medalha = "Bronze";
+		    break;
+		  case 5000:
+		    medalha = "Prata";
+		    break;
+		  case 7000:
+		    medalha = "Ouro";
+		    break;
+		  case 8000:
+		    medalha = "Platina";
+		    break;
+		  case 9000:
+		    medalha = "Ascendente";
+		    break;
+		  case  10000:
+		    medalha = "Imortal";
+		  case  10001:
+		  	medalha = "Radiante";
+		  	break;
+		  default:
+		  	medalha = medalha;
+		}
+		document.getElementById("xp").innerHTML = " Seu nível de XP é "+xp;
+		document.getElementById("medalha").innerHTML = " Sua medalha é "+medalha;
+	}
+
+</script>
+
+</html>
