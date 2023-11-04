@@ -19,19 +19,17 @@
 
 <script type="text/javascript">
 	
-	var heroi;
+	var heroi = "";
 	var xp = 0;
 	var medalha;
 	function nivelHeroi(){
 		heroi = prompt(" Qual é o nome do seu herói ");
-		if(heroi != null){
+		if(heroi != ""){
 			window.alert(
 				" Olá "+heroi+", seja bem vindo ao Desafio de Herói :} "
 			);
 		}else{
-			window.alert(
-				" Não é possível começar o jogo sem o nome de seu herói :{ "
-			);
+			heroi = " O incrível Ramelão "
 		}
 		window.alert(
 			heroi+", seu XP é "+xp+", você deve treinar mais ;} "
